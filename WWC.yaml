@@ -1,0 +1,130 @@
+--- # what works clearinghouse template
+- title: "contactinformation"
+    questions:
+      - researcher_name:
+        prompt: "Researcher name"
+        required: true
+        type: text
+      - title:
+        prompt: Title
+        required: true
+        type: text
+      - address1:
+        prompt: Street Address
+        required: true
+        type: text
+      - address2:
+        prompt: Apartment or Suite number
+        required: false
+        type: text
+      - city:
+        prompt: City
+        required: true
+        type: text
+      - state:
+        prompt: State
+        required: true
+        type: choose_one
+        values:
+      - zip:
+        prompt: ZIP
+        required: true
+        type: text
+      - country:
+        prompt: Country
+        required: false
+        type: choose_one
+          values:
+      - phone:
+        prompt: Phone
+        required: true
+        type: text
+      email:
+        prompt: Email
+        required: true
+        type: text
+      url:
+        prompt: URL
+        required: false
+        type: text
+      organization1:
+        prompt: Organization 1 (if applicable)
+        required: false
+        type: text
+      organization2:
+        prompt: Organization 2 (if applicable)
+        required: false
+        type: text
+# flow control should be applied to response to this question
+- title: "study_status"
+    questions:
+      - status:
+        prompt: "Study Status:"
+        required: true
+        type: choose_one
+        values:
+            - "Funded and In Progress"
+            - "Completed and Available Final Report"
+- title: "study_info"
+  questions:
+    - RCT_title:
+      prompt: "RCT Title:"
+      required: true
+      type: text
+    - PI_first:
+      prompt: "Principal Investigator First Name:"
+      required: true
+      type: text
+    - PI_last:
+      prompt: "Principal Investigator Last Name:"
+      required: true
+      type: text
+    - prefix:
+      prompt: "Prefix:"
+      required: true
+      type: text
+    - PI_title:
+      prompt: "Principal Investigator Title:"
+      required: false
+      type: text
+    - other_key_staff:
+      prompt: "Other Key Staff:"
+      required: false
+      type: text
+    - start_date:
+      prompt: "Start Date (MM/DD/YYYY):"
+      required: true
+      type: date
+    - anticipated_end_date:
+      prompt: "Anticipated End Date (MM/DD/YYYY):"
+      required: true
+      type: date
+    - sponsoring_org:
+      prompt: "Sponsoring Organization (include grantee number where applicable):"
+      required: true
+      type: long_text
+- title: "study_abstract_info"
+  questions:
+    - related_publications:
+      prompt: "Related Publications (Citations in APA Format). Include all publications related to this study
+that are publicly available. The final report should not be listed here."
+      required: false
+      type: long_text
+    - study_setting:
+      prompt: "What is the study setting? Include settings and locations where the data will be collected, as
+well as relevant eligibility criteria for participants."
+      required: true
+      type: long_text
+    - is_intervention:
+      prompt: "What is the intervention? Include intervention type, name(s), and description. Describe how
+the intervention is designed to be delivered to each group."
+      required: true
+      type: long_text
+- title: "sample_characteristics"
+  questions:
+    - randomized_unit:
+      prompt: "What is the randomized unit?"
+      required: true
+      type: choose_one
+    - student_gender:
+      prompt: "Gender"
